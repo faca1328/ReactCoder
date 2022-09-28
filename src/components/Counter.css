@@ -1,0 +1,33 @@
+
+
+.Contenedor__img {
+    max-width: 20rem;
+    height: 20rem;
+    border-radius: 10px;
+    margin-left: 1rem;
+    border-style: outset; 
+    border-width: 4px;
+    border-color: rgba(243, 243, 243, 0.863);
+    background-color:rgb(226, 226, 226);
+    text-align: center;
+}
+
+.Contenedor__img img {
+    width: max-content;
+    height: 9.5rem;
+    padding: 0.5rem;
+
+}
+
+.Contenedor__img p{
+    font-size: small;
+}
+
+.Contenedor__img input{
+    text-align: center;
+}
+
+.Contenedor__img input::-webkit-outer-spin-button,
+.Contenedor__img input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
