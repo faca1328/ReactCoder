@@ -1,5 +1,6 @@
-.container {
+.cart_img {
     display: flex;
+    justify-content: center;
 }
 
 .container svg {
