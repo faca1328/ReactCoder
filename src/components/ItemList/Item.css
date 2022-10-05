@@ -5,11 +5,13 @@
     height: 20rem;
     border-radius: 10px;
     margin-left: 1rem;
+    margin-bottom: 0.7rem;
     border-style: outset; 
     border-width: 4px;
     border-color: rgba(243, 243, 243, 0.863);
     background-color:rgb(226, 226, 226);
     text-align: center;
+    display: inline-block;
 }
 
 .Contenedor__img img {

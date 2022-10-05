@@ -18,9 +18,9 @@ const NavBar = () => {
                         <Nav.Link as={Link} to="/" >Inicio</Nav.Link>
                         <Nav.Link href="#link">Personalizados</Nav.Link>
                         <NavDropdown title="Categorias" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Cine y TV</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Deportes</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Musica</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.1" as={Link} to='/category/Cine y TV'>Cine y TV</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.2" as={Link} to='/category/Deportes'>Deportes</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.3" as={Link} to='/category/Musica'>Musica</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>

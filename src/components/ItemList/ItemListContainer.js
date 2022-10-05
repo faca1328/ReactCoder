@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
-import { getProducts } from '../../Utils/Products';
+import { useParams } from 'react-router-dom';
+import { getCategoryProducts, getProducts } from '../../Utils/Products';
+
 import ItemList from './ItemList';
 import './ItemListContainer.css';
 
@@ -8,22 +10,29 @@ import './ItemListContainer.css';
 
 const  ItemListContainer = ({greeting}) => {
 
-    const [products, setProducts] = useState([]);
+    const { categoryName } = useParams();
+    const [product, setProducts] = useState([]);
     
-    useEffect (() => {
+    useEffect (() => {  
+    if (categoryName) {
+        getCategoryProducts(categoryName)
+          .then((data) => setProducts(data))
+          .catch((error) => console.warn(error))
+      } else {
         getProducts()
-        .then((data) => setProducts(data))
-        .catch((error) => console.warn(error))
-    },[]) 
-    
+          .then((data) => setProducts(data))
+          .catch((error) => console.warn(error))
+      }
+    }, [categoryName])
+
     
     
     return ( 
         <Container>
         
-            <p className="hola"> Estos Son Nuestros Productos {greeting} </p>           
+            <p className="hola">  {greeting} </p>           
             
-            <ItemList products={products} />
+            <ItemList products={product} />
             
         </Container>
      );

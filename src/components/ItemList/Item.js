@@ -1,6 +1,7 @@
 import "./Item.css";
 
 import { useState } from "react"
+import { Link } from "react-router-dom";
 
 
 const Item = ({ product }) => {
@@ -19,9 +20,9 @@ const Item = ({ product }) => {
 
     return (
             <section className="Contenedor__img"  >
-                <div><img src={product.pictureURL}alt="imagen"></img></div>
+                <Link to={`/item/${product.id}`}><img src={product.pictureURL}alt="imagen"></img></Link>
                 <div>
-                    <h3>producto</h3>
+                    <h3>{product.title}</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, enim.</p>
                 </div>
                 <div>
