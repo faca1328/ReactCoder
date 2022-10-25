@@ -7,3 +7,11 @@
     color: rgb(167, 167, 167);
     align-self: center;
 }
+
+.cart_container a {
+    display: flex;
+}
+
+.cart_container a span{
+    margin-left: 0.5rem;
+}

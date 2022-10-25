@@ -1,21 +1,32 @@
 import "./Item.css";
-
+import { useContext } from "react";
+import CartContext from "../../Context/CartContext";
 import { useState } from "react"
 import { Link } from "react-router-dom";
 
 
 const Item = ({ product }) => {
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(1);
 
 
     const CountClick = () => {
-        setCount(count + 1);
+            setCount(count + 1);
     };
 
     const CountClickLess = () => {
-        if (count > 0) {
+        if (count > 1) {
             setCount(count - 1);
         }
+    };
+
+    const onAdd = (count) => {
+        if (count <= 1) 
+            return        
+    };
+
+    const { addItem } = useContext(CartContext);
+
+    const handleClick = () => {addItem(product);
     };
 
     return (
@@ -29,6 +40,9 @@ const Item = ({ product }) => {
                     <button onClick={CountClickLess}>-</button>
                     <input type="number" value={count} min="0"></input>
                     <button onClick={CountClick} >+</button>
+                </div>
+                <div>
+                    <button onClick={handleClick}>Agregar al Carrito</button>
                 </div>
             </section>
     );

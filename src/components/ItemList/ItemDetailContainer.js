@@ -7,21 +7,19 @@ import ItemDetailList from "./ItemDetailList";
 
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState()
-    const { id } = useParams();
+    const [product, setProduct] = useState([])
+    const {id} = useParams();
 
     useEffect(() => {
         getIDProducts(id)
-            .then((data) => {
-                setProduct(data)
-            })
-            .catch(error => console.warn(error))
+        .then((data) => setProduct(data))
+        .catch(error => console.warn(error))
     }, [id])
 
     return (
         <section>
             <h1>
-                Contenedero con el detalle :
+                Contenedero con el detalle Unico Item :
             </h1>
 
             <ItemDetailList products={product} />
