@@ -22,7 +22,7 @@ const ItemDetailContainer = () => {
                 Contenedero con el detalle Unico Item :
             </h1>
 
-            <ItemDetailList products={product} />
+            <ItemDetailList product={product} />
 
 
         </section>
