@@ -6,13 +6,17 @@ import Item from "../ItemList/Item"
 
 const ItemDetailList = ({ product }) => {
 
-  
+  const { addItem } = useContext(CartContext);
+
+  const handleAdd = (value) => {
+    addItem(product, value);
+  };
 
 
   
     return (
     <>
-      <Item product={product} />
+      <Item product={product} onAdd={handleAdd}/>
     </>
   );
 }

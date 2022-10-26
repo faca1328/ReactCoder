@@ -26,7 +26,7 @@ const Item = ({ product }) => {
 
     const { addItem } = useContext(CartContext);
 
-    const handleClick = () => {addItem(product);
+    const handleClick = () => {addItem(product, count);
     };
 
     return (
