@@ -17,32 +17,18 @@ export const CartProvider = ({ children }) => {
                 ...product,
                 quantity
             };
-            setcart([...cart, item]);
-            console.log(item.quantity);
-            console.log("chau");
-        } else {
+            setcart([...cart, item]); console.log(item.id); console.log("if");
+        } else { /* No me diferencia el item por id */
+            const item = cart.find(item => item.id === product.id);
 
-            const itemIndex = cart.findIndex((item) => item.id === parseInt(item.id));
-            console.log(itemIndex);
-      // creamos un borrador del item para poder modificarlo y evidar la modificacion del estado de react
-      const itemDraft = { ...cart[itemIndex] };
-      // actualizamos la quantity en el borrador
-      itemDraft.quantity = itemDraft.quantity + quantity;
-      console.log(itemDraft.quantity);
-      // creamos un borrador del carrito para poder actualizar el item
-      const cartDraft = [...cart];
-      // actualizamos el carrito borrador, SIN TOCAR EL ESTADO REACT
-      cartDraft[itemIndex] = itemDraft;
-      // cart[itemIndex] = itemDraft; PROHIBIDO, ya que modifica el estado de react
-      setcart(cartDraft);
+            console.log(item.id);
 
-      console.log(product.quantity);
-            console.log("hola");
+            item.quantity = item.quantity + quantity;
+            setcart([...cart]);
+
+            console.log("else");
         }
     }
-
-
-
 
 
     const removeItem = (itemId) => {
