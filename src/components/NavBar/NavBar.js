@@ -11,12 +11,11 @@ const NavBar = () => {
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container>
-                <Navbar.Brand href="#home">FaStick</Navbar.Brand>
+                <Navbar.Brand href="#home" as={Link} to="/">FaStick</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link as={Link} to="/" >Inicio</Nav.Link>
-                        <Nav.Link href="#link">Personalizados</Nav.Link>
                         <NavDropdown title="Categorias" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1" as={Link} to='/category/Cine y TV'>Cine y TV</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2" as={Link} to='/category/Deportes'>Deportes</NavDropdown.Item>

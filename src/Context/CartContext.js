@@ -7,7 +7,7 @@ export const CartProvider = ({ children }) => {
 
     const [cart, setcart] = useState([]);
 
-    const isInCart = () => cart.some(product => product.id === product.id);
+    const isInCart = (id) => cart.find((item) => item.id === id);
 
     const addItem = (product, quantity) => {
 
@@ -19,17 +19,26 @@ export const CartProvider = ({ children }) => {
             };
             setcart([...cart, item]); console.log(item.id); console.log("if");
         } else { /* No me diferencia el item por id */
-            const item = cart.find(item => item.id === product.id);
 
-            console.log(item.id);
+            const itemx = (item) => cart.find((product) => product.id === item.id);
 
-            item.quantity = item.quantity + quantity;
+            console.log(itemx);
+            console.log(itemx.quantity);
+            console.log(itemx.id);
+            console.log("producto", product.id);
+            console.log("productoquantity", product.quantity);
+
+            product.quantity = product.quantity + quantity;
             setcart([...cart]);
 
             console.log("else");
+
         }
+
+
     }
 
+   
 
     const removeItem = (itemId) => {
         const remove = cart.filter((item) => item.id !== itemId);
