@@ -7,6 +7,18 @@ export const CartProvider = ({ children }) => {
 
     const [cart, setcart] = useState([]);
 
+/*     const addItem = (item , count) => {
+        if(isInCart(item.id)){
+            setcart(cart.map(product => {
+                return product.id === item.id ? {...product, count: product.count + count} : product}))
+        } else {
+            setcart([...cart, {...item,count}]);
+        }
+    }
+
+    const isInCart = (id) => cart.some((item) => item.id === parseInt(id)); 
+     */
+    
     const isInCart = (id) => cart.find((item) => item.id === id);
 
     const addItem = (product, quantity) => {
