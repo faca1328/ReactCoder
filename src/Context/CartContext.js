@@ -7,18 +7,6 @@ export const CartProvider = ({ children }) => {
 
     const [cart, setcart] = useState([]);
 
-/*     const addItem = (item , count) => {
-        if(isInCart(item.id)){
-            setcart(cart.map(product => {
-                return product.id === item.id ? {...product, count: product.count + count} : product}))
-        } else {
-            setcart([...cart, {...item,count}]);
-        }
-    }
-
-    const isInCart = (id) => cart.some((item) => item.id === parseInt(id)); 
-     */
-    
     const isInCart = (id) => cart.find((item) => item.id === id);
 
     const addItem = (product, quantity) => {
@@ -30,17 +18,11 @@ export const CartProvider = ({ children }) => {
                 quantity
             };
             setcart([...cart, item]); console.log(item.id); console.log("if");
-        } else { /* No me diferencia el item por id */
+        } else { 
 
             const itemx = (item) => cart.find((product) => product.id === item.id);
 
-            console.log(itemx);
-            console.log(itemx.quantity);
-            console.log(itemx.id);
-            console.log("producto", product.id);
-            console.log("productoquantity", product.quantity);
-
-            product.quantity = product.quantity + quantity;
+            itemx.quantity = itemx.quantity + quantity;
             setcart([...cart]);
 
             console.log("else");
@@ -49,8 +31,6 @@ export const CartProvider = ({ children }) => {
 
 
     }
-
-   
 
     const removeItem = (itemId) => {
         const remove = cart.filter((item) => item.id !== itemId);
@@ -71,3 +51,62 @@ export const CartProvider = ({ children }) => {
         {children}
     </CartContext.Provider>)
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   /*  const addItem = (product, quantity) => {
+
+        //PROBAR ESTE MAP, ver tema de quantitiy por count, lo de isInCart.quantity y el ultimo setcart con el video
+
+        const isInCart = cart.find((item) => item.id === product.id);
+        if (isInCart) {
+            setcart(cart.map((item) => {
+                if (item.id === product.id) {
+                    return { ...isInCart, quantity: isInCart.quantity + quantity }
+                } else return item;
+            })
+        );
+        } else {
+            setcart([...cart, { ...product }]);
+        } */
+
+//----------------------------------------------------------------------------------------------
+
+        /* if (!isInCart(product.id)) {
+            const item =
+            {
+                ...product,
+                quantity
+            };
+            setcart([...cart, item]); console.log(item.id); console.log("if");
+        } else { 
+            const itemx = (item) => cart.find((product) => product.id === item.id);
+
+            console.log(itemx);
+            console.log(itemx.quantity);
+            console.log(itemx.id);
+            console.log("producto", product.id);
+            console.log("productoquantity", product.quantity);
+
+            product.quantity = product.quantity + quantity;
+            setcart([...cart]);
+
+            console.log("else");
+
+        }
+
+
+    } */
