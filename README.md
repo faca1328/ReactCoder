@@ -14,7 +14,7 @@ https://github.com/faca1328/ReactCoder
 
 ## Demo
 
-![gs://react-coder-2022.appspot.com/Recording 2022-10-29 at 17.47.06.gif]
+![](gs://react-coder-2022.appspot.com/Recording 2022-10-29 at 17.47.06.gif)
 
 
 ## Estructura de directorios:
